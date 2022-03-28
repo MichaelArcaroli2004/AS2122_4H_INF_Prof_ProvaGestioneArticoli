@@ -13,7 +13,7 @@ namespace AS2122_4H_INF_Prof_ProvaGestioneArticoli
     public partial class frmArticolo : Form
     {
         DialogResult status = DialogResult.Cancel;
-
+        int contatore=0;
         // TODO: (5) aggiungere attributi privati dei dati inseriti nella frmArticoli
         // ...
 
@@ -31,7 +31,7 @@ namespace AS2122_4H_INF_Prof_ProvaGestioneArticoli
         {
             // TODO: (7) passaggio all' attributo/property dei dati inseriti nella frmArticoli con controllo di valorizzazione del dato
             // ... descrizione, unitaMisura, prezzo
-
+            Articolo a = new Articolo(contatore++,txtDescrizione.Text,txtPrezzo.Text,cmbUnitaMisura.Text);
             status = DialogResult.OK;
             Close();
         }
