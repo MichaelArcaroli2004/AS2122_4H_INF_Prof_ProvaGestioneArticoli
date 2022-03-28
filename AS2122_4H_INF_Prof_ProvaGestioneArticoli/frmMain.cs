@@ -13,7 +13,6 @@ namespace AS2122_4H_INF_Prof_ProvaGestioneArticoli
     public partial class frmMain : Form
     {
         List<Articolo> articoli = new List<Articolo>();
-    
         public frmMain()
         {
             InitializeComponent();
@@ -27,6 +26,7 @@ namespace AS2122_4H_INF_Prof_ProvaGestioneArticoli
             frmArticolo f = new frmArticolo();
 
             f.ShowDialog();
+            Articolo a = new Articolo(f.codice, f.descrizione, f.unitaMisura, f.prezzo);
 
             if (f.Status == DialogResult.OK)
             {
@@ -35,7 +35,7 @@ namespace AS2122_4H_INF_Prof_ProvaGestioneArticoli
                 // ...
                 for (int i = 0; i < 3; i++)
                 {
-                    articoli.Add(f.a);
+                    articoli.Add(a);
                 } 
 
                 lblArticoliInseriti.Text = $"Articoli ({articoli.Count})";
@@ -49,9 +49,17 @@ namespace AS2122_4H_INF_Prof_ProvaGestioneArticoli
             {
                 case "Visualizza articoli":
                     // TODO: (2) aggiungere visualizzazione articoli inseriti nella listbox
-                    lstElenco.Items.Add(a.Visualizzati()); 
+                    lstElenco.Items.Add(articoli.Visualizzati()); 
                     break;
             }
+        }
+        public string Visualizzati() 
+        {
+            for (int i = 0; i < articoli.Count; i++)
+            {
+                return articoli[i].ToString();
+            }
+            return "";
         }
 
         private void lstElenco_SelectedIndexChanged(object sender, EventArgs e)

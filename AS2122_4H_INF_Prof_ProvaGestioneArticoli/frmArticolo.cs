@@ -14,7 +14,9 @@ namespace AS2122_4H_INF_Prof_ProvaGestioneArticoli
     {
         DialogResult status = DialogResult.Cancel;
         List<Articolo> articoliCreati = new List<Articolo>();
-
+        public int codice;
+        public string descrizione, unitaMisura;
+        public double prezzo;
 
         int contatore =0;
         // TODO: (5) aggiungere attributi privati dei dati inseriti nella frmArticoli
@@ -29,13 +31,20 @@ namespace AS2122_4H_INF_Prof_ProvaGestioneArticoli
         public frmArticolo()
         {
             InitializeComponent();
+
         }
 
         private void btnSalva_Click(object sender, EventArgs e)
         {
             // TODO: (7) passaggio all' attributo/property dei dati inseriti nella frmArticoli con controllo di valorizzazione del dato
             // ... descrizione, unitaMisura, prezzo
-            Articolo a = new Articolo(contatore++,txtDescrizione.Text,txtPrezzo.Text,int.Parse(cmbUnitaMisura.Text));
+            codice = contatore;
+            descrizione = txtDescrizione.Text; 
+            unitaMisura =cmbUnitaMisura.Text;
+
+            prezzo = int.Parse(txtPrezzo.Text); ;
+
+            Articolo a = new Articolo(codice,descrizione,unitaMisura,prezzo);
             articoliCreati.Add(a);
             status = DialogResult.OK;
             Close();
