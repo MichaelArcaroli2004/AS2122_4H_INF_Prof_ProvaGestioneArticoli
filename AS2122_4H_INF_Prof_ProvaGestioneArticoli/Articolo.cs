@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace AS2122_4H_INF_Prof_ProvaGestioneArticoli
 {
-    
+    //class SelezioneArticoli
+    //{
+    //    List<Articolo> articoliCreati = new List<Articolo>();
+    //    public List<Articolo> ArticoliCreati { get { return articoliCreati; } } 
+    //}
     class Articolo
     {
         // TODO: (8) aggiungere attributi privati di Articolo
@@ -21,7 +25,6 @@ namespace AS2122_4H_INF_Prof_ProvaGestioneArticoli
         public string Descrizione { get { return descrizione; } }
         public string UnitaMisura { get { return unitaMisura; } }
         public double Prezzo { get { return prezzo; } }
-        public int QuantitaArticoli { get; set; }
 
         public Articolo(int codice, string descrizione, string unitaMisura, double prezzo)
         {

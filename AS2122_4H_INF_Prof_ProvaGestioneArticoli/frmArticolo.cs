@@ -14,8 +14,9 @@ namespace AS2122_4H_INF_Prof_ProvaGestioneArticoli
     {
         DialogResult status = DialogResult.Cancel;
         List<Articolo> articoliCreati = new List<Articolo>();
-        public List<Articolo> ArticoliCreati { get { return articoliCreati; } }
-        int contatore=0;
+
+
+        int contatore =0;
         // TODO: (5) aggiungere attributi privati dei dati inseriti nella frmArticoli
         // ...
 

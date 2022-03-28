@@ -13,7 +13,7 @@ namespace AS2122_4H_INF_Prof_ProvaGestioneArticoli
     public partial class frmMain : Form
     {
         List<Articolo> articoli = new List<Articolo>();
-
+    
         public frmMain()
         {
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace AS2122_4H_INF_Prof_ProvaGestioneArticoli
                 // ...
                 for (int i = 0; i < 3; i++)
                 {
-                    articoli.Add(f.);
+                    articoli.Add(f.a);
                 } 
 
                 lblArticoliInseriti.Text = $"Articoli ({articoli.Count})";
@@ -49,7 +49,7 @@ namespace AS2122_4H_INF_Prof_ProvaGestioneArticoli
             {
                 case "Visualizza articoli":
                     // TODO: (2) aggiungere visualizzazione articoli inseriti nella listbox
-                    // ... lstElenco.Items.Add(a.Visualizzati()); 
+                    lstElenco.Items.Add(a.Visualizzati()); 
                     break;
             }
         }
